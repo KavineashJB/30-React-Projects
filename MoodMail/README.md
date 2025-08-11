@@ -1,69 +1,69 @@
-# React + TypeScript + Vite
+# MoodMail Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MoodMail Generator is a simple React component-based application that generates an email template based on the user's current mood. It dynamically sets the email subject and footer signature according to the mood input, providing a quick and personalized way to draft mood-based email content.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Input your current mood.
+- Automatically generates an email subject and footer based on mood keywords.
+- Supports moods like happy, sad, angry (or anger), and a default mood.
+- Ability to reset and input a new mood.
+- Clean and simple UI using reusable components.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Components
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **Home.jsx**  
+  Main container component that handles the mood state, generates the email subject and footer, and toggles between input and output views.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **MoodInput.jsx**  
+  Presents an input field and a generate button to collect the user's mood.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **MoodOutput.jsx**  
+  Displays the generated email subject and footer with a reset button.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Usage
+
+1. Enter your mood in the input box.
+2. Click **Generate Email Template**.
+3. View the generated subject and footer based on your mood.
+4. Click **Reset** to clear and start over.
+
+---
+
+## Mood to Email Mapping
+
+| Mood Keyword(s) | Email Subject             | Footer Signature             |
+| --------------- | ------------------------- | ---------------------------- |
+| happy           | Feeling Grateful Today 😊 | Spread Happiness...          |
+| sad             | Just another tough day!   | Time will fade everything... |
+| angry / anger   | UnControlled Emotion!     | Deep Breaths...              |
+| Others          | Awesome Mood!             | Catch you later...           |
+
+---
+
+## Tech Stack
+
+- React (Functional Components + Hooks)
+- TypeScript (for type safety)
+- Tailwind CSS (for styling, inferred from class names)
+
+---
+
+## Installation & Running Locally
+
+```bash
+# Clone the repo
+git clone <repository-url>
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```

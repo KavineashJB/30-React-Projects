@@ -1,69 +1,82 @@
-# React + TypeScript + Vite
+# Time Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and interactive React app to track daily activities and visualize the time spent on each using a pie chart.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Add activities with corresponding hours spent.
+- Visualize activity time distribution with a dynamic pie chart.
+- Real-time updates as you add more activities.
+- Simple and clean UI with easy input controls.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Components Overview
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Home.tsx
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Main container component.
+- Holds the state for activities and their hours.
+- Passes handlers and data to child components.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### TimeTracker.tsx
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Input form to add new activities and their hours.
+- Validates inputs before adding.
+- Calls a callback to update the activity list.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### TimeChart.tsx
+
+- Displays a pie chart using `react-chartjs-2` and `chart.js`.
+- Dynamically updates to reflect the current activity data.
+
+---
+
+## Installation & Setup
+
+1. Clone the repository:
+
+````bash
+git clone <repository-url>
+# Time Tracker
+
+A simple and interactive React app to track daily activities and visualize the time spent on each using a pie chart.
+
+---
+
+## Features
+
+- Add activities with corresponding hours spent.
+- Visualize activity time distribution with a dynamic pie chart.
+- Real-time updates as you add more activities.
+- Simple and clean UI with easy input controls.
+
+---
+
+## Components Overview
+
+### Home.tsx
+- Main container component.
+- Holds the state for activities and their hours.
+- Passes handlers and data to child components.
+
+### TimeTracker.tsx
+- Input form to add new activities and their hours.
+- Validates inputs before adding.
+- Calls a callback to update the activity list.
+
+### TimeChart.tsx
+- Displays a pie chart using `react-chartjs-2` and `chart.js`.
+- Dynamically updates to reflect the current activity data.
+
+---
+
+## Installation & Setup
+
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+````
