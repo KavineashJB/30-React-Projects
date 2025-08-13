@@ -1,7 +1,7 @@
 import { Textarea } from "./ui/textarea";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const MessageForm = () => {
   const [message, setMessage] = useState<string>("");
@@ -9,22 +9,36 @@ const MessageForm = () => {
   const [isSending, setIsSending] = useState<boolean>(false);
   const [timerId, setTimerId] = useState<NodeJS.Timeout | null>(null);
   const [displayMessage, setDisplayMessage] = useState<string>();
+  const [countDown, setCountDown] = useState<number>(delay);
+
+  useEffect(() => {
+    setCountDown(delay);
+  }, [delay]);
 
   const handleSendWithDelay = () => {
     setIsSending(true);
+    let runningCountDown = countDown;
 
-    let id = setTimeout(() => {
-      setDisplayMessage(message);
-      setMessage("");
-      setDelay(0);
-      setIsSending(false);
-    }, delay * 1000);
+    let countDownId = setInterval(() => {
+      if (runningCountDown === 0) {
+        clearInterval(countDownId);
+        setDisplayMessage(message);
+        setMessage("");
+        setDelay(0);
+        setIsSending(false);
+      }
 
-    setTimerId(id);
+      runningCountDown--;
+
+      setCountDown(runningCountDown);
+    }, 1000);
+
+    setTimerId(countDownId);
   };
 
   const handleCancel = () => {
     if (timerId) {
+      setCountDown(delay);
       clearTimeout(timerId);
       setTimerId(null);
       setIsSending(false);
@@ -40,7 +54,19 @@ const MessageForm = () => {
         value={message}
         required={true}
       />
-      <Input onChange={(e) => setDelay(Number(e.target.value))} value={delay} />
+      <div className="max-w-sm flex justify-between gap-1">
+        <Input
+          className="w-10/12 "
+          onChange={(e) => setDelay(Number(e.target.value))}
+          value={delay}
+        />
+        <Input
+          className="w-2/12 text-center text-gray-400"
+          value={countDown}
+          readOnly
+        />
+      </div>
+
       {!isSending ? (
         <Button className="w-full cursor-pointer" onClick={handleSendWithDelay}>
           Send with Delay
