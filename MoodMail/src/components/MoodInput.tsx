@@ -17,7 +17,10 @@ const MoodInput = ({ mood, setMood, onGenerate, disabled }: Props) => {
         onChange={(e) => setMood(e.target.value)}
         disabled={disabled}
       />
-      <Button className="w-full" disabled={disabled} onClick={onGenerate}>
+      <Button
+        className="w-full cursor-pointer"
+        disabled={disabled}
+        onClick={onGenerate}>
         Generate Email Template
       </Button>
     </div>
