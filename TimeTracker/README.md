@@ -1,82 +1,24 @@
-# Time Tracker
+# ⏰ Time Tracker
 
-A simple and interactive React app to track daily activities and visualize the time spent on each using a pie chart.
-
----
-
-## Features
-
-- Add activities with corresponding hours spent.
-- Visualize activity time distribution with a dynamic pie chart.
-- Real-time updates as you add more activities.
-- Simple and clean UI with easy input controls.
+🚀 A **_React + TypeScript_** app to track your daily activities and visualize them in a beautiful **_Pie Chart_** 🎨.  
+It ensures your total daily tracked hours never exceed **_24 hours_** ⏳ and lets you easily update existing activities with a single click ✏️.
 
 ---
 
-## Components Overview
+## ✨ Features
 
-### Home.tsx
-
-- Main container component.
-- Holds the state for activities and their hours.
-- Passes handlers and data to child components.
-
-### TimeTracker.tsx
-
-- Input form to add new activities and their hours.
-- Validates inputs before adding.
-- Calls a callback to update the activity list.
-
-### TimeChart.tsx
-
-- Displays a pie chart using `react-chartjs-2` and `chart.js`.
-- Dynamically updates to reflect the current activity data.
+✅ **_Add Activities_** — Log any activity with the number of hours spent.  
+✅ **_24-Hour Limit_** — ⛔ No more than 24 total hours in a day.  
+✅ **_Update Existing Entries_** — Edit hours with confirmation prompts 📝.  
+✅ **_Pie Chart Visualization_** — Powered by `react-chartjs-2` 📊.  
+✅ **_Random Colors_** — Each new activity gets a unique color 🎯.  
+✅ **_Smart Empty State_** — Displays _`No Activity to Display`_ when there's no data 📭.
 
 ---
 
-## Installation & Setup
+## 🛠️ Tech Stack
 
-1. Clone the repository:
-
-````bash
-git clone <repository-url>
-# Time Tracker
-
-A simple and interactive React app to track daily activities and visualize the time spent on each using a pie chart.
-
----
-
-## Features
-
-- Add activities with corresponding hours spent.
-- Visualize activity time distribution with a dynamic pie chart.
-- Real-time updates as you add more activities.
-- Simple and clean UI with easy input controls.
-
----
-
-## Components Overview
-
-### Home.tsx
-- Main container component.
-- Holds the state for activities and their hours.
-- Passes handlers and data to child components.
-
-### TimeTracker.tsx
-- Input form to add new activities and their hours.
-- Validates inputs before adding.
-- Calls a callback to update the activity list.
-
-### TimeChart.tsx
-- Displays a pie chart using `react-chartjs-2` and `chart.js`.
-- Dynamically updates to reflect the current activity data.
-
----
-
-## Installation & Setup
-
-1. Clone the repository:
-
-```bash
-git clone <repository-url>
-````
+- ⚛️ **_React (with TypeScript)_**
+- 🎨 **_TailwindCSS_** — Modern styling made easy.
+- 📊 **_react-chartjs-2_** & **_chart.js_** — Data visualization.
+- 🖋️ **_ShadCN UI Components_** — Sleek Input & Button elements.
