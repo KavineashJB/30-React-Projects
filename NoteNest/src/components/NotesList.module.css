@@ -1,0 +1,26 @@
+.loading_animation {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  background-color: #000;
+  border-radius: 50%;
+}
+.loading_animation::before {
+  content: "";
+  position: absolute;
+  /* display: inline-block; */
+  height: 15px;
+  width: 2px;
+  top: 7.5px;
+  left: 15px;
+  transform: translate(-50%, -50%) rotate(0deg);
+  background-color: #fff;
+  transform-origin: 50% 100%;
+  animation: loading 5s linear 1 reverse;
+}
+
+@keyframes loading {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
