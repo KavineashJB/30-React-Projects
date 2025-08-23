@@ -64,7 +64,9 @@ const NoteForm = ({
     }
 
     const findIndex = tags.findIndex(
-      (currTag) => currTag.includes(tag) || tag.includes(currTag)
+      (currTag) =>
+        currTag.toLowerCase().includes(tag.toLowerCase()) ||
+        tag.toLowerCase().includes(currTag.toLowerCase())
     );
     if (findIndex === -1) setTags([...tags, tag]);
     else toast.warn("Tag already Added!");
