@@ -1,69 +1,48 @@
-# React + TypeScript + Vite
+# 📝 QuoteBoard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+QuoteBoard is a simple and interactive full-stack web app built with React + TypeScript and Node.js/Express that lets you add, edit, filter, and delete your favorite quotes.  
+It supports pagination, dark/light themes, and shows when each quote was created in a human-friendly format.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- ➕ Add New Quotes – Save your favorite quotes with ease.
+- ✏ Edit & Update – Modify existing quotes inline.
+- ❌ Delete Quotes – Remove quotes permanently with confirmation.
+- 🔍 Filter Mode – Search quotes by text with ascending/descending sort.
+- 📑 Pagination – Navigate through quotes page by page.
+- 🌗 Theme Toggle – Switch between Light 🌞 and Dark 🌙 modes.
+- ⏱️ Relative Time – See when each quote was created (e.g., _2 hours ago_).
+- 📋 One-Click Copy – Copy quotes instantly to clipboard.
+- 🚫 Duplicate Protection – Prevents adding the same quote twice.
+- ⚠ Validation – Ensures quotes are non-empty and max 60 characters.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Frontend
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- React + TypeScript – UI rendering & type safety
+- Tailwind CSS – Styling and dark/light theme support
+- React Icons – Icons for actions (copy, edit, delete, etc.)
+- Framer Motion – Smooth animations for lists
+- React Toastify – Notifications and alerts
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Backend
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Node.js + Express – REST API server
+- MongoDB + Mongoose – Database & schema modeling
+- CORS & dotenv – Configuration and security
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 🚀 How It Works
+
+1. **Add a Quote** – Enter text (max 60 chars) and click _Add_.
+2. **Edit a Quote** – Click _Edit_, update text, and confirm with _Update_.
+3. **Delete a Quote** – Remove a quote permanently after confirmation.
+4. **Filter Mode** – Toggle filter, type keywords, and sort by date.
+5. **Navigate** – Use arrows to go to previous/next pages.
+6. **Theme Switch** – Switch between light and dark modes (saved in localStorage).

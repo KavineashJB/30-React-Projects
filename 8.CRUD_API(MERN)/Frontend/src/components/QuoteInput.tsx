@@ -70,6 +70,7 @@ const QuoteInput = ({
         <div className="flex items-center justify-between gap-5">
           <div className="w-full flex relative">
             <Input
+              autoComplete="off"
               className="w-full pr-7 border-gray-400 focus-visible:border-purple-500 focus-visible:ring-0"
               placeholder="Enter Text..."
               value={isFilter ? filter : text}

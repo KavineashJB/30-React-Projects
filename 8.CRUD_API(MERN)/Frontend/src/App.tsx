@@ -76,6 +76,10 @@ const App = () => {
       getAllQuotes();
     } catch (error) {
       console.log("Posting Quote Error:", error);
+      if (error?.response?.data?.message == "Quote Should be Unique") {
+        setText("");
+        toast.error("Quotes should not be Duplicate.");
+      }
     } finally {
       setLoading(false);
     }

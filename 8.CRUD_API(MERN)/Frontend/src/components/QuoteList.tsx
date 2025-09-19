@@ -156,7 +156,7 @@ const QuoteList = ({
                     : quote.text
                 }
                 onChange={(e) => setEditableText(e.target.value)}
-                className={`border-0 text-gray-600 font-semibold focus-visible:ring-0 dark:bg-transparent ${
+                className={`border-0 text-gray-400 font-semibold focus-visible:ring-0 dark:bg-transparent ${
                   isEditable && quote._id == id ? "border-1" : "cursor-default"
                 }`}
                 readOnly={!isEditable}
